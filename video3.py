@@ -1,5 +1,6 @@
 # Yoga with Adriene - daily yoga video from her Youtube playlist.
 # Script opens Chrome browser, opens monthly playlist and picks up video with today's date. It turns off captions with "c" button and goes to full screen with "f" key.
+# Replace JSON and it should work!
 
 import datetime
 import webbrowser
@@ -10,7 +11,7 @@ import time
 
 # Replace the channel ID and path to the JSON file with your own
 channel_id = "UCFKE7WVJfvaHW5q283SxchA"
-creds = Credentials.from_service_account_file(r"C:\Users\NitroNokia\Desktop\alpine-realm-381711-182fcef9362c.json")
+creds = Credentials.from_service_account_file(r"C:\Users\XXX\Desktop\XXX.json")
 
 # Authenticate with the YouTube Data API
 youtube = build('youtube', 'v3', credentials=creds)
