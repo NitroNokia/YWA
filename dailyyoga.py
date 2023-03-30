@@ -1,5 +1,6 @@
-# Yoga with Adriene - daily yoga video from her Youtube playlist.
-# Script opens Chrome browser, opens monthly playlist and picks up video with today's date. It turns off captions with "c" button and goes to full screen with "f" key.
+# Yoga with Adriene - daily yoga video from her YouTube playlist.
+# Script opens Chrome browser, opens monthly playlist and picks up video with today's date.
+# It turns off captions with "c" button and goes to full screen with "f" key.
 # Replace JSON and it should work!
 
 import datetime
@@ -8,10 +9,11 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import pyautogui
 import time
+import subprocess
 
 # Replace the channel ID and path to the JSON file with your own
 channel_id = "UCFKE7WVJfvaHW5q283SxchA"
-creds = Credentials.from_service_account_file(r"C:\Users\XXX\Desktop\XXX.json")
+creds = Credentials.from_service_account_file(r"Credentials.json")
 
 # Authenticate with the YouTube Data API
 youtube = build('youtube', 'v3', credentials=creds)
@@ -79,13 +81,7 @@ time.sleep(2)
 pyautogui.press('f')
 
 # Press "c" to disable captions
-
-pyautogui.press ('c')
+pyautogui.press('c')
 
 # Change audio output to TV
-
-import subprocess
-
 subprocess.run(['nircmd.exe', 'setdefaultsounddevice', 'TV', '1'])
-
-
